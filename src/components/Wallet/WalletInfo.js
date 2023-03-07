@@ -1,6 +1,6 @@
 import {useWeb3React} from '@web3-react/core';
-import styles from './wallet.module.css'
-
+import styles from './wallet.module.css';
+import truncate from '../../utils/truncate';
 
 const WalletInfo = (props) => {
   const {active, chainId, account, error} = useWeb3React();
@@ -11,7 +11,7 @@ const WalletInfo = (props) => {
     <p>active: {active.toString()}</p>
     {active && (
     <div >
-      <p>account: {account}</p>
+      <p>account: {truncate(account)}</p>
       <p>chainId: {chainId}</p>
     </div>
     )}
